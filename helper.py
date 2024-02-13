@@ -136,11 +136,14 @@ def team_table(df):
     final.rename(columns={'batting_team':'Team','total_runs_x':'Runs Scored','total_runs_y':'Runs Conceded'},inplace=True)
     temp=df[['id','batting_team']]
     temp.drop_duplicates(inplace=True)
-    matches_per_team=temp['batting_team'].value_counts().reset_index().rename(columns={'batting_team':'Team','count':'No of matches Played'})
-    final=pd.merge(matches_per_team,final,on='Team')
-    final['Runs Scored Per Match']=(final['Runs Scored'] / final['No of matches Played']).astype(int)
-    final['Runs Conceded Per Match']=(final['Runs Conceded'] / final['No of matches Played']).astype(int)
+    matches_per_team=temp['batting_team'].value_counts().reset_index().rename(columns={'index':'Team','batting_team':'No of matches Played'})
+    final=pd.merge(final,matches_per_team,on='Team')
+    final['Runs Scored Per Match']=final['Runs Scored']/final['No of matches Played']
+    final['Runs Conceded Per Match']=final['Runs Conceded']/final['No of matches Played']
+    final['Runs Scored Per Match']=final['Runs Scored Per Match'].astype(int)
+    final['Runs Conceded Per Match']=final['Runs Conceded Per Match'].astype(int)
     return final
+
 
 def team_table_wicket(df):
     wicket_losen_per_team=df.groupby('batting_team').sum()['is_wicket'].sort_values(ascending=False).reset_index().rename(columns={'batting_team':"Team"})
