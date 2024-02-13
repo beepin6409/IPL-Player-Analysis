@@ -158,7 +158,7 @@ def team_table_wicket(df):
     final['Wicket Losen Per Match']=final['Wicket Losen']/final['No of matches Played']
     final['Wicket Taken Per Match']=final['Wicket Taken Per Match'].astype(int)
     final['Wicket Losen Per Match']=final['Wicket Losen Per Match'].astype(int)
-    final
+    return final
 
 def sixes_hit(df):
     temp=df[(df['batsman_runs']==6) & (df['extra_runs']==0) & (df['non_boundary']==0)]
