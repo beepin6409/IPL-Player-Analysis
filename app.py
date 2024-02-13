@@ -102,7 +102,7 @@ if(user_choice=='Team Analysis'):
     st.table(team_table)
     st.title("Team Analysis on Wicket")
     team_table_wicket=helper.team_table_wicket(df)
-
+    team_table_wicket.index=np.arange(1,len(team_table_wicket)+1)
     st.table(team_table_wicket) 
     st.markdown("""---""")
     sixes_hit=helper.sixes_hit(df)
