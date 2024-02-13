@@ -148,36 +148,36 @@ def team_table(df):
 def team_table_wicket(df):
     wicket_losen_per_team=df.groupby('batting_team').sum()['is_wicket'].sort_values(ascending=False).reset_index().rename(columns={'batting_team':"Team"})
     wicket_taken_per_team=df.groupby('bowling_team').sum()['is_wicket'].sort_values(ascending=False).reset_index().rename(columns={'bowling_team':"Team"})
-    final=pd.merge(wicket_taken_per_team,wicket_losen_per_team,right_on="Team",left_on='Team')
+    final=pd.merge(wicket_taken_per_team,wicket_losen_per_team,on='Team')
     final.rename(columns={'is_wicket_x':'Wicket Taken','is_wicket_y':'Wicket Losen'},inplace=True)
     temp=df[['id','batting_team']]
     temp.drop_duplicates(inplace=True)
-    matches_per_team=temp['batting_team'].value_counts().reset_index().rename(columns={'batting_team':'Team','count':'No of matches Played'})
-    final=pd.merge(matches_per_team,final,on="Team")
+    matches_per_team=temp['batting_team'].value_counts().reset_index().rename(columns={'index':'Team','batting_team':'No of matches Played'})
+    final=pd.merge(matches_per_team,final,on='Team')
     final['Wicket Taken Per Match']=final['Wicket Taken']/final['No of matches Played']
     final['Wicket Losen Per Match']=final['Wicket Losen']/final['No of matches Played']
     final['Wicket Taken Per Match']=final['Wicket Taken Per Match'].astype(int)
     final['Wicket Losen Per Match']=final['Wicket Losen Per Match'].astype(int)
-    return final
+    final
 
 def sixes_hit(df):
     temp=df[(df['batsman_runs']==6) & (df['extra_runs']==0) & (df['non_boundary']==0)]
-    no_of_six_hitted=temp['batting_team'].value_counts().reset_index().rename(columns={'batting_team':'Teams','count':'No of Sixes Hitted'})
+    no_of_six_hitted=temp['batting_team'].value_counts().reset_index().rename(columns={'index':'Teams','batting_team':'No of Sixes Hitted'})
     return no_of_six_hitted
 
 def sixes_conced(df):
     temp=df[(df['batsman_runs']==6) & (df['extra_runs']==0) & (df['non_boundary']==0)]
-    no_of_six_conceded=temp['bowling_team'].value_counts().reset_index().rename(columns={'bowling_team':'Teams','count':'No of Sixes Conceded'})
+    no_of_six_conceded=temp['bowling_team'].value_counts().reset_index().rename(columns={'index':'Teams','bowling_team':'No of Sixes Conceded'})
     return no_of_six_conceded
 
 def four_hit(df):
     temp=df[(df['batsman_runs']==4) & (df['extra_runs']==0) & (df['non_boundary']==0)]
-    no_of_four_hitted=temp['batting_team'].value_counts().reset_index().rename(columns={'batting_team':'Teams','count':'No of Fours Hitted'})
+    no_of_four_hitted=temp['batting_team'].value_counts().reset_index().rename(columns={'index':'Teams','batting_team':'No of Fours Hitted'})
     return no_of_four_hitted
 
 def four_conced(df):
     temp=df[(df['batsman_runs']==4) & (df['extra_runs']==0) & (df['non_boundary']==0)]
-    no_of_four_conceded=temp['bowling_team'].value_counts().reset_index().rename(columns={'bowling_team':'Teams','count':'No of Fours Conceded'})
+    no_of_four_conceded=temp['bowling_team'].value_counts().reset_index().rename(columns={'index':'Teams','bowling_team':'No of Fours Conceded'})
     return no_of_four_conceded
 
 
