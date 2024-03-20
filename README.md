@@ -4,9 +4,9 @@ This project is a data analysis tool built using Python to analyze the performan
 
 # Features:
 
-**Explore Player Performance:** Analyze individual player stats across various seasons and teams.
-**Track Trends:** Visualize player performance trends over time using interactive charts and graphs.
-**Compare Players:** Compare the performance of different players across various metrics.
+**Explore Player Performance:** Analyze individual player stats across various seasons and teams.\n
+**Track Trends:** Visualize player performance trends over time using interactive charts and graphs.\n
+**Compare Players:** Compare the performance of different players across various metrics.\n
 
 **Tech Stack:**
 
