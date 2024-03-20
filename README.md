@@ -1,8 +1,8 @@
-## IPL Player Analysis Tool
+# IPL Player Analysis Tool
 
 This project is a data analysis tool built using Python to analyze the performance of Indian Premier League (IPL) players from 2008 to 2020. It utilizes libraries like NumPy, Pandas, and Streamlit for data manipulation, visualization, and creating a user-friendly web application.
 
-# Features:
+### Features
 
 **Explore Player Performance:** Analyze individual player stats across various seasons and teams.
 
@@ -10,7 +10,7 @@ This project is a data analysis tool built using Python to analyze the performan
 
 **Compare Players:** Compare the performance of different players across various metrics.
 
-**Tech Stack:**
+### Tech Stack
 
 * Programming Language: Python
 * Data Analysis Libraries:
