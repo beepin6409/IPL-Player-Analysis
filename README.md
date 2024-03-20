@@ -1,4 +1,4 @@
-# IPL Player Analysis Tool
+## IPL Player Analysis Tool
 
 This project is a data analysis tool built using Python to analyze the performance of Indian Premier League (IPL) players from 2008 to 2020. It utilizes libraries like NumPy, Pandas, and Streamlit for data manipulation, visualization, and creating a user-friendly web application.
 
@@ -18,22 +18,22 @@ This project is a data analysis tool built using Python to analyze the performan
     * Pandas
 * Web App Framework: Streamlit
 
-**Live Link:**
+### Live Link:
 
 https://ipl-player-analysis-website.streamlit.app/
 
-**Getting Started:**
+### Getting Started:
 
 1. **Clone the Repository:** 
 2. **Install Dependencies:** Run `pip install -r requirements.txt` to install required Python libraries.
 3. **Run the App:** Execute `streamlit run main.py` .
 4. **Explore the Interface:** The Streamlit app will launch in your web browser, allowing you to interact with the data and visualizations.
 
-**Data Source:**
+### Data Source:
 
-Kaggle
+** Kaggle **
 
-**Future Enhancements:**
+### Future Enhancements:
 
 * Integrate data from additional IPL seasons.
 * Include more player performance metrics for analysis.
