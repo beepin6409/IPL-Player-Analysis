@@ -24,7 +24,7 @@ https://ipl-player-analysis-website.streamlit.app/
 
 **Getting Started:**
 
-1. **Clone the Repository:** (Instructions on how to clone the repository if applicable)
+1. **Clone the Repository:** 
 2. **Install Dependencies:** Run `pip install -r requirements.txt` to install required Python libraries.
 3. **Run the App:** Execute `streamlit run main.py` .
 4. **Explore the Interface:** The Streamlit app will launch in your web browser, allowing you to interact with the data and visualizations.
